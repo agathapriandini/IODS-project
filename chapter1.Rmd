@@ -1,13 +1,13 @@
 
 # About the project
 
-*Write a short description about the course and add a link to your GitHub repository here. This is an R Markdown (.Rmd) file so you should use R Markdown syntax.*
+Hi! I am Agatha, a second-year master's student at the ECGS program at UH. Undergoing this project is an opportunity for me to focus on developing my data science and R skills. Previously, I have used R in research activities, but they have mainly been adaptive forms of data science learning rather than focused ones. I hope that through the outcome of this project, I can confidently showcase my data science skills in my thesis! You can find my Github repository in this [link](https://github.com/agathapriandini/IODS-project).
 
-```{r}
-# This is a so-called "R chunk" where you can write R code.
+# Week 1 Reflection
 
-date()
+6 November 2023
 
-```
-The text continues here.
+#### Learning reflection
+
+By reading chapters 1-4 of the **R for Health Data Science** book and the **Exercise Set 1**, I feel confident for this course. I felt that the format of these guidance materials were very straightforward and easy to follow. I am sure that future weeks will have more difficult topics, which is why I think this simple flow of information will help when exercises become harder. It is difficult to say what topics were difficult or which were my favorites, because so far the exercises introduced this week were all familiar to me because I have basic R experience. I think because I find the data visualization aspect of R satisfying, I liked chapter 4 the most because we got to do the basic data plot types.
 
