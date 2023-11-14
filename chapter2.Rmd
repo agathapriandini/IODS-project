@@ -2,7 +2,7 @@
 
 *This week we worked on regression analysis using different model variations to understand causal relations and to check the validity of these assumptions..*
 
-*Load libraries*
+**Load libraries**
 
 ```{r}
 
@@ -15,20 +15,20 @@
 
 ```
 
-*Read in data*
+**Read in data**
 
 ```{r}
 
 learn14 <- read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/JYTOPKYS3-data.txt", sep="\t", header=TRUE)
 
 str(learn14)
-dim(learn14) #The output shows there are 60 columns and 156 rows containing numerical values between 1-5
+dim(learn14) #The output shows there are 60 columns and 183 rows containing numerical values between 1-5
 
 ```
 
 
 
-*Combine columns and get the mean for deep, stra and surf. Scale all combination variables to original scales. Exclude observations where exam points variable is zero.*
+**Combine columns and get the mean for deep, stra and surf. Scale all combination variables to original scales. Exclude observations where exam points variable is zero.**
 
 ```{r}
 
@@ -65,7 +65,7 @@ dim(learn14)
 
 
 
-*Save the analysis dataset to the 'data' folder*
+**Save the analysis dataset to the 'data' folder**
 
 ```{r}
 
@@ -82,10 +82,9 @@ head(demo)
 
 ```
 
-*Read in data*
+**Read in data**
 
 ```{r}
-date()
 
 learning2014 <- read_csv("data/learning2014.csv")
 
@@ -96,7 +95,7 @@ str(learning2014)
 
 The dataset has 183 rows and 7 columns. This data contains results from a survey conducted among students, which studies their attitudes towards statistics and includes their exam points. The data contains the variables 'gender', 'Age' and 'attitude'. The questions and answers conducted in this survey have also been categorized into three groups to the corresponding dimensions being deep ('deep'), strategic ('stra'), and surf ('surf'), which were calculated as the averages of the answers given to the questions following the three categories.  
 
-*Data summary and plotting*
+**Data summary and plotting**
 
 ```{r}
 ##show summary
@@ -113,7 +112,7 @@ print(p)
 
 The output as a whole shows that there is generally a positive correlation between the participants' attitudes and the exam points. Looking more closely at the variables, there seems to be very low correlation between the variables themselves. Participant data also shows that there are significantly more females, and furthermore that the age is skewed towards the younger age range with most participants being younger than 30.
 
-*Choose three variables as explanatory variables and fit a regression model where exam points is the target (dependent, outcome) variable. Show a summary of the fitted model and comment and interpret the results. Explain and interpret the statistical test related to the model parameters*
+**Choose three variables as explanatory variables and fit a regression model where exam points is the target (dependent, outcome) variable. Show a summary of the fitted model and comment and interpret the results. Explain and interpret the statistical test related to the model parameters**
 
 ```{r}
 
@@ -133,7 +132,7 @@ summary(learninglm)
 
 The output of the linear regression model shows that the most statistically significant variable is attitude, meaning students with more positive attitudes statistically prove to have better exam points. On the other hand, strategic and surface learning did not show any significant results in this model.
 
-*Refit model only with the statistically significant variable*
+**Refit model only with the statistically significant variable**
 
 ```{r}
 
@@ -146,7 +145,7 @@ summary(learninglm_refit)
 
 The refitted model shows very similar results to the previous model, which shows that attitude as an explanatory variable has the highest statistical significance to exam points as indicated by the multiple R-squared value 0.1151 which indicates that 
 
-*Residual vs Fitted values, Normal QQ-plot, Residuals vs Leverage*
+**Residual vs Fitted values, Normal QQ-plot, Residuals vs Leverage**
 
 ```{r}
 
