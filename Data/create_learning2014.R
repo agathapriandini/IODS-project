@@ -1,7 +1,6 @@
 ###Gatri Agatha Priandini
 ###Assignment 2:Regression and validation
-
-date()
+###14 November 2023
 
 ###########################
 
@@ -84,9 +83,56 @@ learning2014 <- read_csv("data/learning2014.csv")
 dim(learning2014)
 str(learning2014)
 
+#The dataset has 183 rows and 7 columns. This data contains results from a survey conducted among students, which studies their attitudes towards statistics and includes their exam points. The data contains the variables 'gender', 'Age' and 'attitude'. The questions and answers conducted in this survey have also been categorized into three groups to the corresponding dimensions being deep ('deep'), strategic ('stra'), and surf ('surf'), which were calculated as the averages of the answers given to the questions following the three categories.  
+
 ###Data summarization
 
-p <- ggpairs(learning2014, mapping = aes(col = gender, alpha = 0.3), lower = list(combo = wrap("facethist", bins = 20)))
+##show summary
 
-print(p, progress = F)
+summary(learning2014)
+
+##plot data using ggpairs
+
+p <- ggpairs(learning2014, mapping = aes(col = gender), lower = list(combo = wrap("facethist", bins = 20)))
+
+print(p)
+
+##interpretation of the output
+
+#The output as a whole shows that there is generally a positive correlation between the participants' attitudes and the exam points. Looking more closely at the variables, there seems to be very low correlation between the variables themselves. Participant data also shows that there are significantly more females, and furthermore that the age is skewed towards the younger age range with most participants being younger than 30.
+
+###Choose three variables as explanatory variables and fit a regression model where exam points is the target (dependent, outcome) variable. Show a summary of the fitted model and comment and interpret the results. Explain and interpret the statistical test related to the model parameters
+
+##Fit a linear regression model using the explanatory variables chosen are attitude, strategic learning and surface learning due to their highest correlation to exam points. 
+
+learninglm <- lm(Points ~ attitude + stra + surf, data = learning2014)
+
+##Summary
+
+summary(learninglm)
+
+##Interpretation
+
+#The output of the linear regression model shows that the most statistically significant variable is attitude, meaning students with more positive attitudes statistically prove to have better exam points. On the other hand, strategic and surface learning did not show any significant results in this model.
+
+##Refit model only with the statistically significant variable
+
+learninglm_refit <- lm(Points ~ attitude, data = learning2014)
+
+summary(learninglm_refit)
+
+##Interpret the refitted model
+
+#The refitted model shows very similar results to the previous model, which shows that attitude as an explanatory variable has the highest statistical significance to exam points as indicated by the multiple R-squared value 0.1151 which indicates that 
+
+##Residual vs Fitted values, Normal QQ-plot, Residuals vs Leverage
+
+par(mfrow=c(2,2))
+plot(learninglm_refit, which=c(1,2,5))
+
+##The assumptions of the model and interpretation of validity based on diagnostic plots
+
+#The linear regression assumes that there is a linear relationship between the explanatory and response variables. The model shows that the residual variables are normally distributed and have equal variance.
+
+#The output of the Residuals vs Fitted and Residual vs Leverage plots do not show any specific pattern nor curve, but the observations are rather scattered evenly close to the zero line. On the other hand, the output of the QQ-plot supports the assumption that there is a linear regression among the variables and that there is normality as the observations fit along the line quite closely. Therefore, the prior assumption seems to be correct as we see in the plots that the explanatory variables and residuals are normally distributed and have an equal variance.
              
