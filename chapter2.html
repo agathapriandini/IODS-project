@@ -472,7 +472,7 @@ learn14 &lt;- learn14 %&gt;% mutate(points = Points, age = Age)
 learn14 &lt;- learn14 %&gt;% filter(points&gt;0)
 dim(learn14)</code></pre>
 <pre><code>## [1] 166  66</code></pre>
-<p><em>3. Save the analysis dataset to the ‘data’ folder</em></p>
+<p><em>Save the analysis dataset to the ‘data’ folder</em></p>
 <pre class="r"><code>write_csv(learning2014, file = &quot;data/learning2014.csv&quot;)
 
 #Demonstrate that you can also read the data again by using read_csv()
@@ -520,7 +520,7 @@ str(demo)</code></pre>
 ## 6 F         38      3.8  4.75  3.62  2.42     21</code></pre>
 <p><em>Read in data</em></p>
 <pre class="r"><code>date()</code></pre>
-<pre><code>## [1] &quot;Tue Nov 14 17:28:10 2023&quot;</code></pre>
+<pre><code>## [1] &quot;Tue Nov 14 17:32:50 2023&quot;</code></pre>
 <pre class="r"><code>learning2014 &lt;- read_csv(&quot;data/learning2014.csv&quot;)</code></pre>
 <pre><code>## Rows: 183 Columns: 7
 ## ── Column specification ────────────────────────────────────────────────────────

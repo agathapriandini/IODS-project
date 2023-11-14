@@ -65,7 +65,7 @@ dim(learn14)
 
 
 
-*3. Save the analysis dataset to the 'data' folder*
+*Save the analysis dataset to the 'data' folder*
 
 ```{r}
 
